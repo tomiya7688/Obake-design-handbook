@@ -93,6 +93,8 @@ Data:
   商品一覧を Process に返す
 ```
 
+**この擬似コードはUPD Designの責務の分け方だけを表した例です。** UPD Commander Base Designで必要になるCommander・Messenger・Processingの役割や通信経路は省略しています。後者を採用する場合、Process ProcessingがDataへ直接要求する形では実装できません。[両手法の違い](../comparisons/upd-design-and-commander-base-design.md)を参照してください。
+
 注文を保存する場合にも同じ考え方を使います。**保存に失敗した事実**はDataが返し、**その失敗をアプリとしてどう扱うか**はProcessが決め、**利用者にどう知らせるか**はUIが決めます。「保存を依頼した」だけで「保存できた」と表示してはいけません。
 
 ## 5. 自分のプロジェクトに導入する手順
@@ -153,9 +155,11 @@ UPDは、採用すれば必ず開発が速くなる手法ではありません�
 
 ## 9. 関連する手法と補助ツール
 
-[UPD Commander Base Design](https://github.com/tomiya7688/upd-commander-base-design) は、UPDの3層を土台として、処理の呼び出しを担当するCommander、層間のやり取りを担当するMessenger、実際の仕事を行う処理モジュールを分ける設計です。
+[UPD Commander Base Design](https://github.com/tomiya7688/upd-commander-base-design) は、UPDのUI・Process・Dataという3層を前提として、**呼び出しを指揮するCommander、層間通信を行うMessenger、実際の処理を担うProcessing**の役割まで定める設計です。
 
-**UPD Designを使うために、CommanderやMessengerを必ず導入する必要はありません。** それらは、さらに構造を定めたいときに検討する別の設計です。詳しくは[設計手法の組み合わせ方](../guides/combinations.md)も参照してください。
+**UPD Designだけを採用する場合、Commander・Messenger・Processingという構造は必須ではありません。** UPD Designが定めるのは仕事の分担と層の境界であり、具体的な呼び出しや通信の構成は固定しないためです。
+
+反対に、UPD Commander Base Designを採用する場合は、Processingが別の層へ直接要求を送らず、CommanderとMessengerを通して要求を受け渡すなど、追加の規則を守る必要があります。両者を単純に「独立した手法の組み合わせ」と考えず、[UPD DesignとUPD Commander Base Designの違い](../comparisons/upd-design-and-commander-base-design.md)で確認してください。
 
 UPDの原典には[境界チェックツール](https://github.com/tomiya7688/upd-design/tree/main/tools)があります。代表的なコード上の参照を検査する補助ツールであり、UPDの規則をすべて満たすことを保証するものではありません。
 

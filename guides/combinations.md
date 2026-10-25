@@ -13,15 +13,16 @@
 3. **守るべきことが増えすぎないか。** 開発者が説明できない規則は、運用中に守ることも難しくなります。
 4. **個別に採用する理由があるか。** 片方だけで目的を達成できるなら、もう片方を無理に加える必要はありません。
 
-## 例：UPD Design と UPD Commander Base Design
+## 手法の組み合わせと、基本設計の具体化は違う
 
-[UPD Design](../methods/upd-design.md) は、UI・Process・Dataの**仕事の境界**を決めます。
+複数の手法が関係していても、その関係は必ずしも「別々の手法を併用すること」とは限りません。
 
-一方、[UPD Commander Base Design（原典）](https://github.com/tomiya7688/upd-commander-base-design) は、その3層を前提として、処理を呼び出す役割、層をまたいで情報を渡す役割、実際の処理を行う役割まで分けます。
+- **組み合わせ**：異なる目的の手法を、互いの規則を守りながら一緒に使うこと。
+- **具体化**：ある手法で定めた基本的な考え方を前提に、役割や実装上の規則をさらに細かく定めること。
 
-つまり、前者は「**どの種類の仕事を、どの層が担当するか**」を決め、後者は「**仕事をどう呼び出し、受け渡すか**」も具体化します。
+例えば、[UPD Design](../methods/upd-design.md)と[UPD Commander Base Design](https://github.com/tomiya7688/upd-commander-base-design)の関係は後者です。UPD DesignはUI・Process・Dataの責務と境界を定め、UPD Commander Base DesignはさらにCommander・Messenger・Processingの役割と通信経路を定めます。2つの独立した手法を単純に足し合わせる例として扱うのは適切ではありません。
 
-ただし、後者のCommanderやMessengerはUPD Designそのものの必須条件ではありません。まずUPDだけで十分かを考え、さらに役割を細かく分けたい理由があるときに検討します。
+詳しくは[UPD DesignとUPD Commander Base Designの違い](../comparisons/upd-design-and-commander-base-design.md)を参照してください。
 
 ## 採用するときの考え方
 

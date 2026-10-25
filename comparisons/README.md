@@ -4,9 +4,11 @@
 
 ここでは、目的が近い設計手法の違いや、どのような場面で使い分けるかを整理します。
 
-現在は[UPD Design](../methods/upd-design.md)を最初の手法として掲載しています。比較対象となる別の手法の解説が増えた段階で、対応する比較文書を追加します。
+## 比較文書
 
-今は、個別の手法の向き不向きについて[UPD Designの「どんなときに採用するか」](../methods/upd-design.md#6-どんなときに採用するか)と、[設計手法の選び方](../guides/selection.md)を参照してください。
+- [UPD DesignとUPD Commander Base Designの違い](upd-design-and-commander-base-design.md) — 3層の責務分離と、Commander・Messenger・Processingを用いた詳細な構造の違い
+
+個別の手法の向き不向きについては、[UPD Designの「どんなときに採用するか」](../methods/upd-design.md#6-どんなときに採用するか)と、[設計手法の選び方](../guides/selection.md)も参照してください。
 
 ---
 
