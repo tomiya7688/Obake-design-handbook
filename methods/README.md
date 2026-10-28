@@ -7,6 +7,7 @@
 | 手法 | 解決したい問題 | 解説 |
 | --- | --- | --- |
 | UPD Design | 画面の処理、アプリの判断、データの読み書きが混ざっている | [UPD Design の解説](upd-design.md) |
+| UPD Commander Base Design | 処理を呼び出す仕事と実際の計算・保存などの仕事が混ざっている | [UPD Commander Base Design の解説](upd-commander-base-design.md) |
 
 どの手法を採用するか迷う場合は、[設計手法の選び方](../guides/selection.md)を先に読んでください。
 
